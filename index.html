@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kriminalitets rapport</title>
+</head>
+<body>
+    <img id="top-right-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAk1BMVEUAK07+//3///8AG0UAKU2JmagAH0cAI0mOmaYAFkIAEkAAJ0vT2t5ygpK7xMwMLlBXZ3v4+vqss7wABDwRN1jo7O4mP1zq7/AqSmYALVMgRGLd4uXY3+MAJUsxSWQACj5IWXBqfI+bqrUGOFoYP18ANlh/kaGtusLK0dc9Vm9bcISmsr05UGq5wMZJY3t/jJtUY3feZRQEAAAD9ElEQVR4nO3a63KiMACGYQxZUKJY64EqotXaemhte/9XtwGFRIttnbG70nmfHztDiE0+RBKSdRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8FlJT6T/yf/fk+zz3I8/z/EQd1ku8xjTwHh8WqYfHodsNXN/UUebThx/0zQl9JEtaM83qyyZNf/zLBGy3/nz01Jrd3I8Sz8qX3LeW4yjq5KKov5pvJt7+u1Rr8+m1HdGfmRO6/72S1kyzPSkn5nBzkYiyNxblOnE46+b3ojsKO2WV+nVvF8drmcKWdWWcIDQn2lLdnWgtUxsp/8Yc3jYuk7ApaqXSNsLeLqK3iURpNSGau1+kTliUHScsTmQJy1vLznfShJ28xo8nzBp5DrJKbudkJfHsVjqhGKU3obc9XUeImV/hhDXxR39D6qX/Wb/CoDoJi1+8Kdm6B70vqSNq6fO0IgnzkcDqfqh733i2utUPl1ozsuq8Juck/HgZi6v20wnFeH2Xenm1OrXST9NubI7nethvBEG3bZXV3TMS6oF0x0rY3xfFI/mzCZvtRKW8u74p04PwtFYciul+hGy8mY5vG99O6DiDnGmjL/MyPUH42YT70U8Ox6ZsIOXQJGxO95+zexJ6ZySUO0pZCbv7QvmvEjqJSTge6DvLJMyemynr+SpWjvx+wrxdaSc01f9VwqadMHk1fXzOG1Wj2CTsVTyhvylJKBcmYXNRuYRqbPfeTjgvS6ivQsUSysfYLvNnZQl7pk5crYTpG+gmMr+xtvS+TqgqlFAO5rdLM2ERoe7870qob8mDSaeel/6yuzRYHkyN0xlZ+ZOmV9EnjRwevuuKdeL4ZeNhZUcLb3aQUPQD6fyuEd87uElFJ13uUqOvZm3DM+al/zmhKn5du1e4WbqGcfbMe+aq3NUl9DbFy2g0DusP2SKT0zV3rgh2i4fSfnu6PXp7ehrd5a4uoRrcZN7f718Gyt13aGqWAcS8pxI/SZyFWboRb0ffYWQM5ZUllNLPJEmiTG8ac2uAjMPtcrtd2Ssd68NVjGJRQru+hKV1rElNrWQlqnO01mbVrVUkoZp8upq4rH5Cx52fTig670n1E0ovOhlRzLPRr+IJHf9lfGpnZrnr3jUnNLtrpxM6/mRZursWtRyZJyyTJSwcJIyK4v7UaujGPIovk9Bpt+q5Vvt0NRUMW7fhqhnH/VQcj5ur7fw1MDuk9TLpDql9ZBI6T0XxmzXLkxNT/TI7pPYut/dpPf3yn/QWg8nOYNDTn0ysS1C6be0c73Lbf6603cvvcp8lW8rdqdZ/VgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADO9hfV8mpVoa3TZQAAAABJRU5ErkJggg==" alt="Description of the image" p>
+
+    <div class="container">
+        <h1>Kriminalitetsrapport</h1>
+
+        <form id="crimeForm">
+            <label for="location">Lokation:</label>
+            <input type="text" id="location" required>
+
+            <label for="crimeType">Type af kriminalitet:</label>
+            <input type="text" id="crimeType" required>
+
+            <label for="crimeDescription">Beskrivelse:</label>
+            <textarea id="crimeDescription" required></textarea>
+            
+
+            <button type="button" onclick="submitCrimeReport()">Indsend Rapport</button>
+        </form>
+        <div class="contact-info">
+            <p>Kontakt Politiet privat ved tlf: 114</p>
+            <p>Mail: sjyl@politi.dk</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <section class="recent-crimes-section">
+        <h2>Nyeste kriminelle aktiviteter</h2>
+        <ul id="crimeList"></ul>
+    </section>
+    <div class="popup-container" id="popupContainer">
+        <div class="popup">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <p>Tak for din henvendelse. Politiet kigger på sagen så hurtigt som muligt.</p>
+        </div>
+
+        <style>
+            body {
+                margin: 2; /* Remove default margin */
+                padding: 2; /* Remove default padding */
+            }
+    
+            #top-right-image {
+                position: absolute;
+                top: 0;
+                right: 0;
+                max-width: 100%; /* Ensure the image does not exceed the viewport width */
+                height: 100; /* Maintain the aspect ratio of the image */
+            }
+        </style>
+
+</body>
+</html>
